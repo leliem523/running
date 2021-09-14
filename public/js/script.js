@@ -2,13 +2,13 @@ const btnStart = document.getElementById('btn-start');
 const canvas = document.getElementById('canvas');
 const gamer = document.getElementById('gamer');
 const barrier = document.getElementById('barrier');
-const core = document.querySelector('#core span');
-let coreDefault =  0;
+const score = document.querySelector('#core span');
+let scoreDefault =  0;
 
 // Event 
 btnStart.addEventListener('click', () => {
-    coreDefault = 0;
-    core.innerHTML = coreDefault;
+    scoreDefault = 0;
+    score.innerHTML = scoreDefault;
     btnStart.style.display = 'none';
     canvas.classList.add('canvas-moving');
     barrier.classList.add('barrier-moving');
@@ -31,13 +31,13 @@ function gamerJump() {
     }
     setTimeout(() => {
         gamer.classList.remove('gamer-moving');
-        renderCore();
+        rendersCore();
     }, 800);
 }
 
-function renderCore() {
-    coreDefault ++;
-    core.innerHTML = coreDefault;
+function rendersCore() {
+    scoreDefault ++;
+    score.innerHTML = scoreDefault;
 }
 
 // Alive func
