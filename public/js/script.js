@@ -45,9 +45,9 @@ setInterval(() => {
     // Get current gamer Y position
     let gamerBottom = parseInt(window.getComputedStyle(gamer).getPropertyValue('bottom'));
     // Get current barrier X position
-    let barrierRight =  parseInt(window.getComputedStyle(barrier).getPropertyValue('right'));
-
-    if(barrierRight > 1350  && gamerBottom < 200) {
+    let barrierLeft =  parseInt(window.getComputedStyle(barrier).getPropertyValue('left'));
+    console.log(barrierLeft)
+    if(barrierLeft <= 100  && gamerBottom < 200) {
         btnStart.innerHTML = 'game over';
         btnStart.style.display = 'inline-block';
         canvas.classList.remove('canvas-moving');
